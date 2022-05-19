@@ -1,0 +1,39 @@
+include-file = /home/soumava/.config/polybar/colors.ini
+include-file = /home/soumava/.config/polybar/modules.ini
+
+[bar/mybar]
+;override-redirect = true
+wm-restack = bspwm
+
+background = ${colors.transparent}
+foreground = ${colors.foreground}
+fixed-center = true
+bottom = false
+width = 97%
+height = 35
+radius = 20.0
+offset-y = 10
+offset-x = 10
+padding = 0
+line-size = 3
+; border-top-size = 5
+border-top-color = ${colors.background}
+; border-bottom-size = 5
+border-bottom-color = ${colors.background}
+
+include-file = /home/soumava/.config/polybar/fonts.ini
+
+modules-left = bspwm seperator-black
+modules-center = seperator-black-start weather-icon weather-data date seperator-black
+modules-right = seperator-blue alsa seperator-cyan battery seperator-green memory seperator-red cpu seperator-end powermenu 
+module-margin = 0
+tray-position = right
+;tray-maxsize = 5
+tray-background = #b3aaaa
+tray-offset-x = 6
+;tray-offset-y = 2
+tray-padding = 1
+
+[settings]
+screenchange-reload = true
+pseudo-transparency = true
