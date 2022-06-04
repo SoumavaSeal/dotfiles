@@ -248,6 +248,7 @@
             (setq lsp-keymap-prefix "C-c l")
         :hook (
             (python-mode . lsp)
+			(c++-mode . lsp)
             (lsp-mode . lsp-enable-which-key-integration))
         :commands lsp)
 
@@ -267,7 +268,7 @@
 
 
 ** Language Specific Packages:
-
+   
 *** Python:
 
   #+begin_src elisp :tangle init.el
@@ -294,6 +295,7 @@
 
   #+end_src
 
+
 *** Dart and Flutter:
 
   #+begin_src elisp :tangle init.el 
@@ -303,7 +305,17 @@
   
   #+end_src
 
-  
+*** Lua Mode:
+
+#+begin_src elisp :tangle init.el
+
+    (use-package lua-mode
+        :ensure t
+        :config
+            (add-to-list 'auto-mode-alist '("\\.lua$" . lua-mode)))
+
+#+end_src
+
   
 ** Ivy counel swiper
 
