@@ -35,8 +35,12 @@
     selected-active-background:  rgba ( 68, 145, 237, 100 % );
 }
 window {
+    height: 100%;
+    width: 30em;
+    location: west;
+    anchor: west;
     background-color: @background;
-    border:           1;
+    border:           0px 2px 0px 0px;
     padding:          5;
 }
 mainbox {
