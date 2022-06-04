@@ -1,0 +1,13 @@
+#+Title: Awesomewm Config
+#+Author: Soumava Seal
+#+Description: This repo contains the config files for my personal build of awesomewm.
+
+* Config for Awesomewm :
+
+  Awesomewm is an extensible and highly customizable window manager written in lua. This repository contains my configuration files for awesomewm.
+  
+** Note :
+
+   This configuration is based on the repo [[https://github.com/lcpz/awesome-copycats][awesome-copycats]]. I modified mainly two files of this repo "./rc.lua" and "./themes/powerarrow-dark/theme.lua". I also used [[https://github.com/streetturtle/awesome-wm-widgets][awesome-wm-widgets]] and [[https://github.com/streetturtle/awesome-buttons][awesome-buttons]] repository.
+
+   *PS: This is currently in a very initial stage and some of the things may not work at the moment.*
