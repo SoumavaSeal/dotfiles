@@ -27,6 +27,7 @@
 
 (setq-default indent-tabs-mode nil)
 (setq-default tab-width 4)
+(setq evil-want-C-i-jump nil)
 (setq indent-line-function 'insert-tab)
 (setq-default evil-shift-width tab-width)
 
@@ -92,7 +93,7 @@
     :ensure t
     :config
         (setq company-idle-delay 0)
-        (setq company-minimum-prefix-length 3)
+        (setq company-minimum-prefix-length 1)
         (global-company-mode t))
 
 (use-package which-key
