@@ -19,6 +19,19 @@ source /home/soumava/.config/nvim/plugin-config/vimwiki.vim
 "                       Basic Defaults
 "---------------------------------------------------------
 
+set path+=**
+
+set wildmode=longest,list,full
+set wildmenu
+
+set wildignore+=*.pyc
+set wildignore+=*_build/*
+set wildignore+=**/coverage/*
+set wildignore+=**/node_modules/*
+set wildignore+=**/android/*
+set wildignore+=**/ios/*
+set wildignore+=**/.git/*
+
 syntax on
 
 set relativenumber
@@ -43,6 +56,7 @@ filetype plugin on
 
 " highlight colorcolumn ctermbg=0 guibg=lightgrey
 
+
 "---------------------------------------------------------
 "                           Plugins
 "---------------------------------------------------------
@@ -66,6 +80,8 @@ Plug 'dart-lang/dart-vim-plugin'
 
 "Vim Wiki
 Plug 'vimwiki/vimwiki'
+
+"Surroundings - Parentheses, 
 
 call plug#end()
 
