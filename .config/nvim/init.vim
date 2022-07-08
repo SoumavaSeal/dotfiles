@@ -52,6 +52,7 @@ set undofile
 set incsearch
 set nocompatible
 set encoding=UTF-8
+filetype on
 filetype plugin on
 
 " highlight colorcolumn ctermbg=0 guibg=lightgrey
@@ -113,13 +114,21 @@ noremap <leader>tn :tabnext<CR>
 noremap <leader>tp :tabprevious<CR>
 noremap <leader>tf :tabfirst<CR>
 noremap <leader>tl :tablast<CR>
-noremap <leader>t  :tabnew
+noremap <leader>tc :tabclose<CR>
+noremap <leader>t  :tabnew<CR>
 
 "---------------------------------------------------------
 "                   Custom Key Bindings
 "---------------------------------------------------------
 
+"Select All
+noremap<C-a> ggVG
+
+"Open Sidebar
 map <C-n> :NERDTreeToggle<CR>
+
+"Go to the end of the current block
+noremap<TAB> %
 
 "---------------------------------------------------------
 "                   Custom Commands.

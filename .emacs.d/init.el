@@ -25,14 +25,15 @@
 (set-face-attribute 'font-lock-keyword-face nil :font "Cascadia Mono PL" :height 110 :slant 'italic)
 (setq-default line-spacing 0.12)
 
-(setq-default indent-tabs-mode nil)
 (setq-default tab-width 4)
 (setq evil-want-C-i-jump nil)
-(setq indent-line-function 'insert-tab)
 (setq-default evil-shift-width tab-width)
+(setq-default indent-tabs-mode nil)
 
 (setq auto-save-default nil)
 (setq make-backup-files nil)
+
+(setq browse-url-browser-function 'qutebrowser)
 
 (require 'package)
 (setq package-archives '(("melpa" . "https://melpa.org/packages/")
@@ -93,7 +94,7 @@
     :ensure t
     :config
         (setq company-idle-delay 0)
-        (setq company-minimum-prefix-length 1)
+        (setq company-minimum-prefix-length 3)
         (global-company-mode t))
 
 (use-package which-key
@@ -102,7 +103,6 @@
         (which-key-mode))
 
 (use-package lsp-mode
-    :commands (lsp lsp-deffered)
     :init
         (setq lsp-keymap-prefix "C-c l")
     :hook (

@@ -1,6 +1,7 @@
 #+title: Emacs From Scratch
 #+author: Soumava Seal
 #+description: This is the literate configuaration file for my emacs system.
+#+OPTIONS: toc:2
 
 * Config file Location:
 
@@ -85,7 +86,14 @@
 
     #+end_src
 
+** Default Browser to open urls
+   #+begin_src elisp :tangle init.el
+
+   (setq browse-url-browser-function 'browse-url-qutebrowser)
   
+   #+end_src
+
+    
 * Package Management :
   
 ** Adding melpa:
@@ -244,7 +252,6 @@
   #+begin_src elisp :tangle init.el
 
     (use-package lsp-mode
-        :commands (lsp lsp-deffered)
         :init
             (setq lsp-keymap-prefix "C-c l")
         :hook (
