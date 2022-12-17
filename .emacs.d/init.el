@@ -1,19 +1,19 @@
-(setq user-emacs-directory "~/.emacs.d/")							; All the packages are stored here.
+(setq user-emacs-directory "~/.emacs.d/")				; All the packages are stored here.
 (global-set-key (kbd "<escape>") 'keyboard-escape-quit) 	      	; This kill the prompt on esc key press.
-(set-frame-parameter (selected-frame) 'alpha '(90 . 90))		    ; This is to set the opacity of the frame.
+(set-frame-parameter (selected-frame) 'alpha '(90 . 90))		; This is to set the opacity of the frame.
 (setq custom-file (concat user-emacs-directory "custom.el"))		; This is to keep the emacs custom settings file in a seperate file 
 (load custom-file 'noerror)
 
-(setq inhibit-startup-message t)									; This prevents the startup message.
+(setq inhibit-startup-message t)					; This prevents the startup message.
 
-(scroll-bar-mode -1)        										; Disable visible scrollbar
-(tool-bar-mode -1)          										; Disable the toolbar
-(tooltip-mode -1)           										; Disable tooltips
-(menu-bar-mode -1)        				    						; Disable the menu bar
+(scroll-bar-mode -1)							; Disable visible scrollbar
+(tool-bar-mode -1)          						; Disable the toolbar
+(tooltip-mode -1)           						; Disable tooltips
+(menu-bar-mode -1)        				    		; Disable the menu bar
 
-(set-fringe-mode 10)         										; Give some breathing room
+(set-fringe-mode 10)         						; Give some breathing room
 
-(add-hook 'text-mode-hook 'visual-line-mode)						; Soft Word Wrap
+(add-hook 'text-mode-hook 'visual-line-mode)				; Soft Word Wrap
 
 ;; Relative Line Numbers
 (setq column-number-mode t)
