@@ -1,0 +1,34 @@
+{
+    // General Settings
+
+    "layer": "top",
+    "position": "top",
+    "height": 10,
+    "spacing": 4,
+    "margin-top": 4,
+    "fixed-center": true,
+    
+    "include" : [
+        "~/.config/waybar/modules.json",
+    ],
+
+
+    // Choose the order of the modules
+    "modules-left": [
+        "hyprland/workspaces",
+        "custom/launcher",
+        "keyboard-state",
+    ],
+
+    "modules-center": [
+        "hyprland/window"
+    ],
+    
+    "modules-right" : [
+        "group/sysinfo",
+        "clock",
+        "tray",
+        "custom/powermenu"
+    ],
+
+}

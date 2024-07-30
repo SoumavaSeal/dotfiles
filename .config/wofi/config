@@ -1,0 +1,8 @@
+mode=drun
+allow_images=true
+no_actions=true
+width=60%
+height=60%
+image_size=24px
+prompt=Search...
+normal_window=true

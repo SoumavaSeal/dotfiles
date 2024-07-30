@@ -1,0 +1,115 @@
+@import '/home/soumava/.cache/wal/colors-waybar.css';
+
+/* -------------------------
+ * General Settings
+ * -------------------------- */
+
+*{
+    margin: 0;
+    padding: 0;
+    font-family: "JetBrains Mono Nerd Font";
+    font-size : 12px;
+    border: none;
+    border-radius: 0;
+}
+
+window#waybar{
+    background-color: rgba(0,0,0,0.8);
+    background: transparent;
+}
+
+/* -------------------------
+ * Workspaces Settings
+ * -------------------------- */
+
+#workspaces{
+    background: @color7;
+    margin: 0 5px;
+    padding: 0;
+    border-radius: 10px;
+}
+
+#workspaces button{
+    padding: 0 4px;
+    background: @color8;
+    color: @color8;
+    border-radius: 10px;
+    margin: 1px 1px;
+    opacity: 0.5;
+    transition: all 0.3s ease-in-out;
+}
+
+#workspaces button.active{
+    min-width: 50px;
+    transition: all 0.3s ease-in-out;
+    opacity:1.0;
+}
+
+/* -------------------------
+ * Keyboard State
+ * -------------------------- */
+
+#keyboard-state{
+    margin: 0 10px;
+    padding: 0 10px;
+    background: #ffffff;
+    color: @background;
+    font-size: 8px;
+    border-radius: 15px;
+}
+
+/* -------------------------
+ * HyprLand Window Style
+ * -------------------------- */
+
+#window{
+    font-size: 12px;
+    font-weight: bold;
+}
+
+/* -------------------------
+ * System Info Group Style
+ * -------------------------- */
+
+#sysinfo{
+    background: @background;
+    margin: 0 5px;
+    padding: 0 10px;
+    border-radius: 10px;
+}
+
+#battery,#pulseaudio, #backlight{
+    margin: 0 5px;
+}
+
+
+#clock{
+    background: @color2;
+    padding: 0 10px;
+    border-radius: 10px;
+    margin: 0 5px;
+}
+
+#tray{
+    background: @color8;
+    border-radius: 10px;
+    padding: 0 10px;
+}
+
+/* -------------------------
+ * Custom Modules Style
+ * -------------------------- */
+
+#custom-launcher{
+    background: @background;
+    padding: 0 10px;
+    border-radius: 10px;
+}
+
+#custom-powermenu{
+    background:@foreground;
+    margin: 0 5px;
+    color : @color2;
+    padding: 0 10px;
+    border-radius: 15px;
+}

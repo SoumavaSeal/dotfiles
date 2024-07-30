@@ -1,0 +1,19 @@
+window{
+    font-size: 13px;
+    font-family: "JetBrainsMono Nerd Font";
+    margin: 5px;
+    border: 2px solid white;
+}
+
+#outer-box{
+}
+
+#input{
+    margin: 5px;
+    padding: 2px;
+    border: 2px solid red;
+}
+
+#img{
+    margin: 0px 20px;
+}
