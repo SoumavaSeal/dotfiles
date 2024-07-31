@@ -71,6 +71,8 @@ return require('packer').startup(function(use)
       }
   }
 
+--[[ Version update broke the config
+
   use{
         "lukas-reineke/indent-blankline.nvim",
         config = function ()
@@ -80,12 +82,13 @@ return require('packer').startup(function(use)
             }
         end
   }
-
+    ]]
 
 
 -- Tabnine
   use {'tzachar/cmp-tabnine', run='./install.sh', requires = 'hrsh7th/nvim-cmp'}
 
+-- LSPSaga
   use({
       "glepnir/lspsaga.nvim",
       branch = "main",
@@ -93,4 +96,20 @@ return require('packer').startup(function(use)
           { "nvim-tree/nvim-web-devicons" },
       },
   })
+
+-- GitSigns
+  use {'lewis6991/gitsigns.nvim',
+        config = function ()
+            require 'gitsigns'.setup()
+        end
+    }
+
+-- Oil.nvim
+  use({
+    "stevearc/oil.nvim",
+    config = function()
+      require("oil").setup()
+    end,
+  })
+
 end)
