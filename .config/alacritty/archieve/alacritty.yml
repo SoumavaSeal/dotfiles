@@ -584,7 +584,7 @@ schemes:
 # *SolarizedDark
 # *TomorrowNight
 
-colors: *GruvboxDark
+colors: *DoomOne
 
 #######################################
 ##       END OF COLOR SCHEMES        ##
