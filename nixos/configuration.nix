@@ -58,12 +58,11 @@
   users.users.soumava = {
     isNormalUser = true;
     description = "Soumava";
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = [ "networkmanager" "wheel" "libvirtd" ];
     shell = pkgs.zsh;
     packages = with pkgs; [
       clang
       bitwarden-desktop
-      zed-editor
       github-desktop
       heroic
       emacs-pgtk
@@ -101,6 +100,7 @@
     nixd
     yazi
     ripgrep
+    dnsmasq # for libvirt networking
     
     # System Customization Utilities
     hyprpaper
@@ -114,6 +114,11 @@
     nwg-look
   ];
   
+  #Virt Manager
+  programs.virt-manager.enable = true;
+  virtualisation.libvirtd.enable = true;
+
+  # Display Manager
   services.displayManager.ly.enable = true;
 
   # Desktop Environment
@@ -139,9 +144,9 @@
   # Hardware Accelaration & setting up the drivers
   hardware.graphics = {
     enable = true;
-    extraPackages = [ pkgs.amdvlk ];
+    # extraPackages = [ pkgs.amdvlk ]; --> Got Deprecated
     enable32Bit = true;
-    extraPackages32 = [ pkgs.driversi686Linux.amdvlk ];
+    # extraPackages32 = [ pkgs.driversi686Linux.amdvlk ]; --> Got Deprecated
   };
   
   #GameScope
