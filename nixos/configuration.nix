@@ -2,7 +2,7 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ config, pkgs, ... }:
+{ config, pkgs, inputs, ... }:
 
 {
   imports =
@@ -72,11 +72,15 @@
      nodejs
      lua-language-server
      vscodium
+     inputs.zen-browser.packages."${pkgs.stdenv.hostPlatform.system}".default
     ];
   };
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
+
+  #Enabling Nix Flakes
+  nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
