@@ -1,14 +1,18 @@
-
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ config, pkgs, inputs, ... }:
+{
+  config,
+  pkgs,
+  inputs,
+  ...
+}:
 
 {
-  imports =
-    [ # Include the results of the hardware scan.
-      ./hardware-configuration.nix
-    ];
+  imports = [
+    # Include the results of the hardware scan.
+    ./hardware-configuration.nix
+  ];
 
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
@@ -23,7 +27,7 @@
 
   # Enable networking
   networking.networkmanager.enable = true;
-  
+
   # Enable Bluetooth
   hardware.bluetooth.enable = true;
   services.blueman.enable = true;
@@ -51,14 +55,18 @@
     layout = "us";
     variant = "";
   };
-  
+
   programs.zsh.enable = true;
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.soumava = {
     isNormalUser = true;
     description = "Soumava";
-    extraGroups = [ "networkmanager" "wheel" "libvirtd" ];
+    extraGroups = [
+      "networkmanager"
+      "wheel"
+      "libvirtd"
+    ];
     shell = pkgs.zsh;
     packages = with pkgs; [
       clang
@@ -66,13 +74,16 @@
       github-desktop
       heroic
       emacs-pgtk
-      (python3.withPackages (python-pkgs: with python-pkgs; [
-       jedi-language-server
-     ]))
-     nodejs
-     lua-language-server
-     vscodium
-     inputs.zen-browser.packages."${pkgs.stdenv.hostPlatform.system}".default
+      (python3.withPackages (
+        python-pkgs: with python-pkgs; [
+          jedi-language-server
+        ]
+      ))
+      nodejs
+      lua-language-server
+      vscodium
+      obsidian
+      inputs.zen-browser.packages."${pkgs.stdenv.hostPlatform.system}".default
     ];
   };
 
@@ -80,7 +91,10 @@
   nixpkgs.config.allowUnfree = true;
 
   #Enabling Nix Flakes
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
+  nix.settings.experimental-features = [
+    "nix-command"
+    "flakes"
+  ];
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
@@ -102,10 +116,13 @@
     imv
     ntfs3g
     nixd
+    nixfmt
     yazi
     ripgrep
     dnsmasq # for libvirt networking
-    
+    onlyoffice-desktopeditors
+    libnotify
+
     # System Customization Utilities
     hyprpaper
     waybar
@@ -117,7 +134,7 @@
     wlogout
     nwg-look
   ];
-  
+
   #Virt Manager
   programs.virt-manager.enable = true;
   virtualisation.libvirtd.enable = true;
@@ -133,13 +150,13 @@
 
   # Environment Variables
   environment = {
-    
+
     #session vairables
     sessionVariables = {
       SUDO_EDITOR = "nvim";
       NIXOS_OZONE_WL = "1";
     };
-    
+
     #system-wide variables
     variables.AMD_VULKAN_ICD = "RADV";
 
@@ -152,31 +169,39 @@
     enable32Bit = true;
     # extraPackages32 = [ pkgs.driversi686Linux.amdvlk ]; --> Got Deprecated
   };
-  
+
   #GameScope
   programs.gamescope = {
     enable = true;
     #capSysNice = true;
   };
-  
+
   #gameMode
   programs.gamemode.enable = true;
 
-  # Auto Mount Drives
-  fileSystems."/mnt/Softwares" = 
-    { device = "/dev/disk/by-uuid/B8BCB0F4BCB0AE6E";
-      fsType = "ntfs";
-    };
+  # QuickShell
+  programs.dms-shell = {
+    enable = true;
+    systemd.enable = false;
+  };
 
-  fileSystems."/mnt/Backups" = 
-    { device = "/dev/disk/by-uuid/DC6AFBC96AFB9E88";
-      fsType = "ntfs";
-    };
-  
-  fileSystems."/mnt/Games and Movies" = 
-    { device = "/dev/disk/by-uuid/E49EE9FE9EE9C8DE";
-      fsType = "ntfs";
-    };
+  services.upower.enable = true;
+
+  # Auto Mount Drives
+  fileSystems."/mnt/Softwares" = {
+    device = "/dev/disk/by-uuid/B8BCB0F4BCB0AE6E";
+    fsType = "ntfs";
+  };
+
+  fileSystems."/mnt/Backups" = {
+    device = "/dev/disk/by-uuid/DC6AFBC96AFB9E88";
+    fsType = "ntfs";
+  };
+
+  fileSystems."/mnt/Games and Movies" = {
+    device = "/dev/disk/by-uuid/E49EE9FE9EE9C8DE";
+    fsType = "ntfs";
+  };
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
@@ -198,7 +223,6 @@
     #jack.enable = true;
   };
 
-  
   system.autoUpgrade.enable = true;
   # Enable the OpenSSH daemon.
   # services.openssh.enable = true;
