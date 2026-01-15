@@ -82,7 +82,6 @@
       nodejs
       lua-language-server
       vscodium
-      obsidian
       inputs.zen-browser.packages."${pkgs.stdenv.hostPlatform.system}".default
     ];
   };
