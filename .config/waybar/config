@@ -3,7 +3,7 @@
 
     "layer": "top",
     "position": "top",
-    "height": 10,
+    "height": 25,
     "spacing": 4,
     "margin-top": 4,
     "fixed-center": true,
@@ -21,12 +21,12 @@
     ],
 
     "modules-center": [
-        "hyprland/window"
+        //"hyprland/window"
+        "clock"
     ],
     
     "modules-right" : [
         "group/sysinfo",
-        "clock",
         "tray",
         "custom/powermenu"
     ],
