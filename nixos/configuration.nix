@@ -222,6 +222,13 @@
     #jack.enable = true;
   };
 
+  # Garbage collection settings
+  nix.gc = {
+    automatic = true;
+    randomizedDelaySec = "14m";
+    options = "--delete-older-than 10d";
+  };
+
   system.autoUpgrade.enable = true;
   # Enable the OpenSSH daemon.
   # services.openssh.enable = true;
