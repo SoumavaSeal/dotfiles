@@ -69,20 +69,30 @@
     ];
     shell = pkgs.zsh;
     packages = with pkgs; [
-      clang
-      bitwarden-desktop
-      github-desktop
-      heroic
-      emacs-pgtk
+      # Language Servers
       (python3.withPackages (
         python-pkgs: with python-pkgs; [
           jedi-language-server
         ]
       ))
-      nodejs
       lua-language-server
+      gopls
+
+      # dev tools
+      clang
+      nodejs
+      go
+      gccgo15
+
+      # personal general softwares
+      bitwarden-desktop
+      github-desktop
       vscodium
+      emacs
       inputs.zen-browser.packages."${pkgs.stdenv.hostPlatform.system}".default
+
+      # Gaming
+      heroic
     ];
   };
 
@@ -98,28 +108,30 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
-    # Basic system utilities
-    wget
-    git
-    wl-clipboard
-    neovim
-    tmux
-    foot
+    # Basic system applications
     alacritty
     firefox
     pcmanfm
+    neovim
     btop
-    qbittorrent
     zathura
     mpv
     imv
+    qbittorrent
+    onlyoffice-desktopeditors
+
+    # System Utilities
     ntfs3g
+    wget
+    git
+    wl-clipboard
+    tmux
+    foot
     nixd
     nixfmt
     yazi
     ripgrep
     dnsmasq # for libvirt networking
-    onlyoffice-desktopeditors
     libnotify
 
     # System Customization Utilities
