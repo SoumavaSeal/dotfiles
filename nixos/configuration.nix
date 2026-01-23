@@ -90,6 +90,9 @@
       vscodium
       emacs
       inputs.zen-browser.packages."${pkgs.stdenv.hostPlatform.system}".default
+      inputs.android-dev.packages."${pkgs.stdenv.hostPlatform.system}".default.flutter
+      inputs.android-dev.packages."${pkgs.stdenv.hostPlatform.system}".default.androidSdk
+      inputs.android-dev.packages."${pkgs.stdenv.hostPlatform.system}".default.jdk17
 
       # Gaming
       heroic
@@ -166,6 +169,13 @@
     sessionVariables = {
       SUDO_EDITOR = "nvim";
       NIXOS_OZONE_WL = "1";
+      ANDROID_HOME = "${
+        inputs.android-dev.packages."${pkgs.stdenv.hostPlatform.system}".default.androidSdk
+      }/libexec/android-sdk";
+      ANDROID_SDK_ROOT = "${
+        inputs.android-dev.packages."${pkgs.stdenv.hostPlatform.system}".default.androidSdk
+      }/libexec/android-sdk";
+      JAVA_HOME = "${inputs.android-dev.packages."${pkgs.stdenv.hostPlatform.system}".default.jdk17}";
     };
 
     #system-wide variables

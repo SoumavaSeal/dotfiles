@@ -3,14 +3,12 @@
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/23.11";
-    flake-utils.url = "github:numtide/flake-utils";
   };
 
   outputs =
     {
       self,
       nixpkgs,
-      flake-utils,
     }:
     let
       pkgs = import nixpkgs {
@@ -24,6 +22,7 @@
       androidComposition = androidEnv.composeAndroidPackages {
         includeEmulator = true;
         includeNDK = false;
+        # cmdLineToolsVersion = "latest";
         abiVersions = [ "x86_64" ];
         includeSystemImages = true;
         systemImageTypes = [ "google_apis" ];
@@ -37,14 +36,19 @@
       androidSdk = androidComposition.androidsdk;
     in
     {
-      devShells.x86_64-linux.default = pkgs.mkShell {
-        ANDROID_SDK_ROOT = "${androidSdk}/libexec/android-sdk";
-        ANDROID_HOME = "${androidSdk}/libexec/android-sdk";
-        buildInputs = with pkgs; [
-          flutter
-          androidSdk
-          javaPackages.compiler.openjdk17
-        ];
+      packages.x86_64-linux.default = {
+        flutter = pkgs.flutter;
+        androidSdk = androidSdk;
+        jdk17 = pkgs.javaPackages.compiler.openjdk17;
       };
+      # devShells.x86_64-linux.default = pkgs.mkShell {
+      #   ANDROID_SDK_ROOT = "${androidSdk}/libexec/android-sdk";
+      #   ANDROID_HOME = "${androidSdk}/libexec/android-sdk";
+      #   buildInputs = with pkgs; [
+      #     flutter
+      #     androidSdk
+      #     javaPackages.compiler.openjdk17
+      #   ];
+      # };
     };
 }
