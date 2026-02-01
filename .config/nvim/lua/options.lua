@@ -45,3 +45,9 @@ vim.incsearch = true
 
 -- Update
 vim.opt.updatetime = 80
+
+
+-- -- Code Folding
+-- vim.opt.foldmethod = "expr"
+-- vim.opt.foldexpr = "nvim_treesitter#foldexpr()"
+-- vim.opt.foldlevel = 99

@@ -30,3 +30,6 @@ vim.keymap.set("n", "C-a", "ggVG")
 -- Telescope Keymaps
 vim.keymap.set("n", "<leader>b", ":Telescope buffers<CR>")
 vim.keymap.set("n", "<leader>gl", ":Telescope diagnostics<CR>")
+
+-- set codefolding
+vim.keymap.set("n", "<leader>zz", ":set foldexpr=nvim_treesitter#foldexpr()<CR>")
