@@ -1,10 +1,13 @@
 return {
   cmd = { "dart", "language-server", "protocol=lsp" },
   filetypes = { "dart" },
-  root_markers = {".git"},
+  root_markers = {"pubspec.yaml", ".git"},
   init_options = {
-    closingLables = true,
-    flutterOutline = true
+    closingLabels = true,
+    flutterOutline = true,
+    onlyAnalyzeProjectsWithOpenFiles = true,
+    outline = true,
+    suggestFromUnimportedLibraries = true
   },
   settings = {
     dart = {
@@ -15,8 +18,8 @@ return {
       },
       formatOnSave = true,
       updateImportsOnRename = true,
-      --completeFunctionCalls = true,
-      --showTodos = true,
+      completeFunctionCalls = true,
+      showTodos = true
     }
   }
 }

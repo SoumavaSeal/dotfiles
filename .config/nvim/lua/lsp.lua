@@ -4,7 +4,7 @@ vim.lsp.enable('ts_ls')
 vim.lsp.enable('nixd')
 vim.lsp.enable('luals')
 vim.lsp.enable('tailwindcss-ls')
-vim.lsp.enable('dartls')
+-- vim.lsp.enable('dartls')
 
 -- LSP Keybindings
 vim.api.nvim_create_autocmd('LspAttach', {
