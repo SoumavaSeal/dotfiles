@@ -24,7 +24,7 @@ return {
             light = "lotus"
         },
     },
-    init = function()
-        vim.cmd.colorscheme('kanagawa-dragon')
-    end
+    -- init = function()
+    --     vim.cmd.colorscheme('kanagawa-dragon')
+    -- end
 }
