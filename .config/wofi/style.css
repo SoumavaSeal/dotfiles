@@ -1,7 +1,11 @@
+@include '/home/soumava/.config/wofi/colors.css';
+
 window{
     font-size: 13px;
     font-family: "JetBrainsMono Nerd Font";
     margin: 5px;
+    background: @background;
+    color: @foreground;
     border: 2px solid white;
 }
 
@@ -9,9 +13,10 @@ window{
 }
 
 #input{
-    margin: 5px;
+    margin: 10px;
     padding: 2px;
-    border: 2px solid red;
+    /* background: @foreground; */
+    /* border: 2px solid @background; */
 }
 
 #img{
