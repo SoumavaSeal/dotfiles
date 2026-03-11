@@ -1,9 +1,6 @@
 -- Setting up Leader Key
 vim.g.mapleader = ","
 
--- Open File Manager
-vim.keymap.set("n", "<leader>pv", vim.cmd.Ex)
-
 -- Toggle between windows.
 vim.keymap.set("n", "<leader>h", ":wincmd h<CR>")
 vim.keymap.set("n", "<leader>j", ":wincmd j<CR>")

@@ -6,6 +6,9 @@ return {
         Lua = {
             runtime = {
                 version = 'LuaJit'
+            },
+            diagnostics = {
+                globals = { 'vim' }
             }
         }
     }
