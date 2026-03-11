@@ -1,4 +1,5 @@
 @import '/home/soumava/.cache/wal/colors-waybar.css';
+@import '/home/soumava/.config/waybar/colors.css';
 
 /* -------------------------
  * General Settings
@@ -16,6 +17,7 @@
 window#waybar{
     background-color: rgba(0,0,0,0.8);
     background: transparent;
+    /* background: @background; */
 }
 
 /* -------------------------
@@ -23,7 +25,7 @@ window#waybar{
  * -------------------------- */
 
 #workspaces{
-    background: @color7;
+    background: @on_surface;
     margin: 0 5px;
     padding: 0;
     border-radius: 10px;
@@ -31,8 +33,8 @@ window#waybar{
 
 #workspaces button{
     padding: 0 4px;
-    background: @color8;
-    color: @color8;
+    background: @inverse_on_surface;
+    color: @inverse_on_surface;
     border-radius: 10px;
     margin: 1px 1px;
     opacity: 0.5;
@@ -72,26 +74,28 @@ window#waybar{
  * -------------------------- */
 
 #sysinfo{
-    background: @background;
+    background: @tertiary_container;
     margin: 0 5px;
     padding: 0 10px;
     border-radius: 10px;
 }
 
 #battery,#pulseaudio, #backlight{
-    margin: 0 5px;
+    color: @on_tertiary_container;
+    margin: 0 10px;
 }
 
 
 #clock{
-    background: @color2;
+    background: @secondary_container;
+    color: @on_secondary_container;
     padding: 0 10px;
     border-radius: 10px;
     margin: 0 5px;
 }
 
 #tray{
-    background: @color8;
+    background: @secondary;
     border-radius: 10px;
     padding: 0 10px;
 }
@@ -101,15 +105,16 @@ window#waybar{
  * -------------------------- */
 
 #custom-launcher{
-    background: @background;
+    background: @primary_container;
+    color: @on_primary_container;
     padding: 0 10px;
     border-radius: 10px;
 }
 
 #custom-powermenu{
-    background:@foreground;
+    background:@outline_variant;
     margin: 0 5px;
-    color : @color2;
+    color : @on_background;
     padding: 0 10px;
     border-radius: 15px;
 }

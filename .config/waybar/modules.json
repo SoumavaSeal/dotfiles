@@ -66,7 +66,7 @@
             "default": ["", ""]
         },
         "scroll-step": 1,
-        "on-click": "pavucontrol",
+        "on-click": "alacritty --class=floating -e wiremix",
         "ignored-sinks": ["Easy Effects Sink"],
         "tooltip-format": "{volume}% {desc}"
     },
@@ -82,7 +82,7 @@
         "interval": 60,
         "tooltip" : true,
         "tooltip-format": "<tt><small>{calendar}</small></tt>",
-        "format": "  {:%A, %B %d, %Y 󰅐 %R}",
+        "format": "  {:%A, %B %d, %Y 󰅐 %I:%M %p}",
         "format-alt": " {:%H:%M}",
         "calendar": {
             "mode"          : "year",
