@@ -23,6 +23,7 @@ path_append() {
 export JAVA_HOME=/home/soumava/Dev/devtools/jdk-24.0.2
 export FLUTTER_HOME=/home/soumava/Dev/devtools/flutter
 export ANDROID_HOME=/home/soumava/Dev/devtools/ANDROID
+# export NVIM_APPNAME='nvim-scratch'
 
 # PATH="$FLUTTER_HOME/bin:$HOME/.emacs.d/bin:$JAVA_HOME/bin:$ANDROID_HOME/cmdline-tools/latest/bin/:$ANDROID_HOME/emulator/:$PATH"
 path_append "$FLUTTER_HOME/bin"
@@ -30,7 +31,7 @@ path_append "$HOME/.emacs.d/bin"
 path_append "$JAVA_HOME/bin"
 path_append "$ANDROID_HOME/cmdline-tools/latest/bin" 
 path_append "$ANDROID_HOME/emulator"
-
+path_append "/home/soumava/Downloads/lua-language-server-3.17.1-linux-x64/bin/"
 export PATH
 
 # Uncomment the following line if you don't like systemctl's auto-paging feature:
@@ -48,6 +49,11 @@ fi
 if [ -e $HOME/.bash_aliases ]; then
     source $HOME/.bash_aliases
 fi
+
+# Home-Manager
+# [ -e "$HOME/.nix-profile/etc/profile.d/home-manager.sh" ] && . "$HOME/.nix-profile/etc/profile.d/home-manager.sh"
+
+
 
 unset rc
 # source ~/.bash_completion/alacritty
