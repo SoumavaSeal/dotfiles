@@ -22,24 +22,27 @@
   # The home.packages option allows you to install Nix packages into your
   # environment.
   home.packages = with pkgs; [
-    yazi
-    code-cursor
-    gimp
 
-    clang-tools
-    cmake
-    
-    # hyprland ricing
+    #System Packages
+    neovim
+    yazi
+    #code-cursor
+    #gimp
+
+    #clang-tools
+    #cmake
+
+    stow
+
     nwg-look
     matugen
     swww
-    hyprshot
-    bluetui
-    impala
-    wiremix
+    waybar
+    wofi
+    #bluetui
+    #impala
+    #wiremix
     lazygit
-
-    rustfmt
 
     # # Adds the 'hello' command to your environment. It prints a friendly
     # # "Hello, world!" when run.
@@ -96,4 +99,6 @@
 
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
+  
+  targets.genericLinux.enable = true;
 }
