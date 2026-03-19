@@ -26,6 +26,9 @@
     #System Packages
     neovim
     yazi
+    #bluetui
+    #impala
+    #wiremix
     #code-cursor
     #gimp
 
@@ -33,15 +36,13 @@
     #cmake
 
     stow
-
+    
+    #Customizations
     nwg-look
     matugen
     swww
     waybar
     wofi
-    #bluetui
-    #impala
-    #wiremix
     lazygit
 
     # # Adds the 'hello' command to your environment. It prints a friendly
